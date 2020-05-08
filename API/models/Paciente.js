@@ -7,6 +7,10 @@ constpacieteSchema = new Schema({
         type: String,
         trim:true,   
     },
+    edad:{
+        type:String,
+        trim:true,
+    },
     propietario:{
         type: String,
         trim:true,
@@ -23,6 +27,10 @@ constpacieteSchema = new Schema({
         type: String,
         trim: true,
     }, 
+    correo :{
+        type: String,
+        trim: true,
+    },
 });
 
 

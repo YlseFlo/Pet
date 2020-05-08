@@ -1,13 +1,12 @@
 const express = require('express');
-Const router = express.Router();
+const router = express.Router();
 
-module.exports = Function(){
+module.exports = Function() {
 
-router.post{'/pacientes',
+router.post(
+    '/pacientes',
     //Importar controlador
-};
-
-router.get
+);
 
 return router;
 
