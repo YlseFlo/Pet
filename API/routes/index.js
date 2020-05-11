@@ -1,12 +1,16 @@
-const express = require('express');
 const router = express.Router();
+// importacion de controladores
+const pacienteController = require ('../controllers/pacienteControllers');
 
-module.exports = Function() {
-
-router.post(
+module.exports = function() {
+//agregar nuevos pacientes por POST
+router.post( 
     '/pacientes',
-    //Importar controlador
+    //Importar controladores
+    pacienteController.nuevoCliente
 );
+//REGISTRA LOS DATOS DE LOS CLIENTES BD
+router.get('/pacientes', pacienteController.obtenerPacientes);
 
 return router;
 
