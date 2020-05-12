@@ -1,3 +1,4 @@
+//entrada al sistema exports
 const router = express.Router();
 // importacion de controladores
 const pacienteController = require ('../controllers/pacienteControllers');

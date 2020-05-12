@@ -13,6 +13,7 @@ const NuevaCita = (props) => {
         telefono: "",
         sintomas: "",
     });
+
     //datos del formulario
     const actualizarState = (e) => {
         guardarCita({
@@ -20,11 +21,12 @@ const NuevaCita = (props) => {
             [e.target.name]: e.target.value,
         });
     };
+
     //Petición en API
     const crearNuevaCita = (e) => {
         e.preventDefault();
 
-        //peticion con axios
+        //peticion por axios
         clienteAxios.post("/pacientes", cita).then((respuesta) =>{
             console.log(respuesta);
 
@@ -34,6 +36,7 @@ const NuevaCita = (props) => {
             props.history.push("/");
         });
     };
+
     return (
         <Fragment>
             <h1 className="my-5">Crear nueva cita</h1>
@@ -42,7 +45,7 @@ const NuevaCita = (props) => {
                 <div className="row">
                     <div className="col-12 mb-5 d-flexjustify-content-center">
                         <Link
-                        to=("/")
+                        to={"/"}
                         className="btn btn-success text-uppercase py-2 px-5 font-weight-bold"
                         >
                             Volver
@@ -105,6 +108,7 @@ const NuevaCita = (props) => {
                              onChange={actualizarState}
                              />
                 </div>
+
                 <div className="form-group">
                              <label htmlFor="sintomas">Sintomas</label>
                              <textarea
@@ -112,7 +116,7 @@ const NuevaCita = (props) => {
                              name="sintomas"
                              rows="6"
                              onChange={actualizarState}
-                             /></textarea>
+                             ></textarea>
                 </div>
 
                 <input
@@ -124,7 +128,6 @@ const NuevaCita = (props) => {
                         </div>
                     </div>
                 </div>
-            </div>
         </Fragment>
     );
 };

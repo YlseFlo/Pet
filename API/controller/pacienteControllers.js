@@ -16,7 +16,7 @@ try{
         next();    
     }
 
-    res.json({mensaje: ' el cliete se agrego correctamente '});
+    res.json({mensaje: ' el cliente se agrego correctamente '});
 };
 //obtiene datos de los pacientes
 exports.obtenerPacientes = async (req, res, next) => {

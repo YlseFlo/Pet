@@ -1,3 +1,4 @@
+//
 import React,{ useEffect, useState } from "react";
 import {BrowserRouter as Router, Route, Switch} from "reac-route-dom";
 
@@ -13,16 +14,45 @@ function App(){
     const[consultar,guardarConsultar] = useState(true);
 
     useEffect(() => {
-        const consultarAPI =() => {
+        const consultarAPI = () => {
             clienteAxios
             .get("/pacientes")
-            .then((respuestas) =>{
+            .then((respuesta) => {
+                // colocar los datos obtenidos
+                guardarCitas(respuesta.data);
                 
+                guardarConsultar(false);
             })
-        }
-    })
-}
-}
+            .cath((error) => {
+                console.log(error);
+            });
+        };
+        consultarAPI();
+    }, [consultar]);
+    return (
+        <Router>
+            <Switch>
+                <Route exact path="/" component={() => <Pacientes citas={}}
+                <Router
+                exact
+                path="/nueva"
+                component={() => <NuevaCita guardarConsultar={guardarConsultar}}
+                />
 
+                <Route
+                exact
+                path="/cita/:id"
+                render={(props) => {
+                    const cita = citas.filter(
+                        (cita)=> cita._id === props.match.params.id
+                    );
 
+                    return <Cita cita={cita[0]} guardarConsultar={guardarConsultar}></Cita>
+                }}
+                />
+            </Switch>
+        </Router>
+    );
+
+            }
 export default App;
