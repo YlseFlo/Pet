@@ -4,20 +4,20 @@ import clienteAxios from "../config/axios";
 import Swal from "sweetalert2";
 
 const Cita = (props) => {
-    if (props.cita){
+    if (!props.cita) {
         props.history.push("/");
         return null;
     }
 
     // extraccion de props
     const{
-        citas: { _id, nombre, propietario, fecha, hora, telefono, sitomas}
+        citas: { _id, nombre, edad, propietario, correo, fecha, hora, telefono, sitomas}
     } = props;
 
     // se elimina el registro de los datos
-    const eliminarCita = (id) =>{
+    const eliminarCita = (id) => {
         Swal.fire({
-            title: "¿Estas seguro",
+            title: "¿Estas seguro?",
             text:"Una cita eliminada no se puede recuperar",
             icon: "warning",
             showCancelButton:true,
@@ -52,17 +52,15 @@ const Cita = (props) => {
         <div className="col-12 mb-5 d-flex justify-content-center">
         <Link
         to={"/"}
-        //******FALTACODIGO***** */
-        className="btn btn-success text-uppercase py-2 px-5 for"
+        className="btn btn-success text-uppercase py-2 px-5 font-weight-bold"
         >
         Volver
         </Link>
         </div>
         <div className="col-md-8 mx-auto">
         <div className ="list-group">
-        //** FALTA CODIGO**********************
-        <div className="p-5 list-group-item list-group-item- a">
-        <div className="d-flex w-100justify-content-between">
+        <div className="p-5 list-group-item list-group-item- action flex-colum align">
+        <div className="d-flex w-100justify-content-between mb-4">
         <h3 className="mb-3">{nombre}</h3>
         <small className="fecha alta">
         {fecha} - {hora}
@@ -72,13 +70,15 @@ const Cita = (props) => {
         <div className="contacto py-3">
             <p>Dueño: {propietario}</p>
               <p>Telefono:{telefono} </p>
+              <p>correo:{correo} </p>
+              <p>edad:{edad} </p>
         </div>
         <div className="d-flex">
             <button
             type="button"
             //*******Falta codigo*****
-            className="text-uppercase py-2 px-5 font-weight"
-            onClick{() => eliminarCita(_id)}
+            className="text-uppercase py-2 px-5 font-weight-bold"
+            onClick={() => eliminarCita(_id)}
 >
     Eliminar &times;
 </button>
@@ -90,4 +90,5 @@ const Cita = (props) => {
                              </div>
                              </Fragment>
     );
-}
+};
+export default withRouter(Cita);
