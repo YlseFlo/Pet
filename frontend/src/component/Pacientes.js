@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Pacientes = ({ citas }) => {
     if(citas.length === 0) return null;
 
-    return {
+    return (
         <Fragment>
         <h1 className="my-5">Registra tu cita</h1>
         
@@ -25,7 +25,7 @@ const Pacientes = ({ citas }) => {
        <Link
             to={'/cita/${cita._id}'}
             key={cita._id}
-            className="p-5 list-group-item list-group-item-action flex-column align
+            className="p-5 list-group-item list-group-item-action flex-column align"
        >
         <div className="d-flex w-100 justify-content-between mb-4">
             <h3 className="mb-3">{cita.nombre}</h3>
@@ -38,14 +38,14 @@ const Pacientes = ({ citas }) => {
             <p>Dueño: {cita.propietario}</p>
                 <p>Correo:{cita.correo}</p>
                 <p>Telefono: {cita.telefono}</p>
-        </div>
-       </Link>
+                                  </div>
+                            </Link>
             ))}
+                          </div>
+                     </div>
+                 </div>
             </div>
-            </div>
-        </div>
         </Fragment>
-    };
-    //ylse
-}
+    );
+};
 export default Pacientes;

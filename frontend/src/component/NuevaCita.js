@@ -7,7 +7,9 @@ const NuevaCita = (props) => {
     //Generar como objeto
     const [cita, guardarCita] = useState({
         nombre: "",
+        edad:"",
         propietario: "",
+        correo:"",
         fecha: "",
         hora: "",
         telefono: "",
@@ -43,7 +45,7 @@ const NuevaCita = (props) => {
 
             <div className="cotainer mt-5 py-5">
                 <div className="row">
-                    <div className="col-12 mb-5 d-flexjustify-content-center">
+                    <div className="col-12 mb-5 d-flex justify-content-center">
                         <Link
                         to={"/"}
                         className="btn btn-success text-uppercase py-2 px-5 font-weight-bold"
@@ -56,7 +58,7 @@ const NuevaCita = (props) => {
                      <form onSubmit={crearNuevaCita} className="bg-white p-5 bordered">
                          <div className="form-group">
                              <label htmlFor="nombre">Nombre Mascota</label>
-                             <Input
+                             <input
                              type="text" 
                              className= "form-control form-control-lg"
                              id="nombre"
@@ -67,7 +69,7 @@ const NuevaCita = (props) => {
                 </div>
                 <div className="form-group">
                              <label htmlFor="propietario">Nombre Propietario</label>
-                             <Input
+                             <input
                              type="text" 
                              className= "form-control form-control-lg"
                              id="propietario"
@@ -79,7 +81,7 @@ const NuevaCita = (props) => {
 
                 <div className="form-group">
                              <label htmlFor="telefono">Teléfono</label>
-                             <Input
+                             <input
                              type="tel" 
                              className= "form-control form-control-lg"
                              id="telefono"
@@ -90,7 +92,7 @@ const NuevaCita = (props) => {
                 </div>
                 <div className="form-group">
                              <label htmlFor="fecha">Fecha Alta</label>
-                             <Input
+                             <input
                              type="date" 
                              className= "form-control form-control-lg"
                              id="fecha"
@@ -100,7 +102,7 @@ const NuevaCita = (props) => {
                 </div>
                 <div className="form-group">
                              <label htmlFor="hora">Hora Alta</label>
-                             <Input
+                             <input
                              type="time" 
                              className= "form-control form-control-lg"
                              id="hora"
@@ -110,7 +112,7 @@ const NuevaCita = (props) => {
                 </div>
 
                 <div className="form-group">
-                             <label htmlFor="sintomas">Sintomas</label>
+                             <label htmlFor="sintomas">Síntomas</label>
                              <textarea
                              className= "form-control"
                              name="sintomas"
@@ -131,3 +133,4 @@ const NuevaCita = (props) => {
         </Fragment>
     );
 };
+export default withRouter(NuevaCita);

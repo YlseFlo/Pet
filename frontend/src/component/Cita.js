@@ -11,7 +11,17 @@ const Cita = (props) => {
 
     // extraccion de props
     const{
-        citas: { _id, nombre, edad, propietario, correo, fecha, hora, telefono, sitomas}
+        citas: { 
+            _id, 
+            nombre, 
+            edad, 
+            propietario, 
+            correo, 
+            fecha, 
+            hora, 
+            telefono, 
+            sintomas
+        },
     } = props;
 
     // se elimina el registro de los datos
@@ -59,8 +69,8 @@ const Cita = (props) => {
         </div>
         <div className="col-md-8 mx-auto">
         <div className ="list-group">
-        <div className="p-5 list-group-item list-group-item- action flex-colum align">
-        <div className="d-flex w-100justify-content-between mb-4">
+        <div className="p-5 list-group-item list-group-item-action flex-colum align">
+        <div className="d-flex w-100 justify-content-between mb-4">
         <h3 className="mb-3">{nombre}</h3>
         <small className="fecha alta">
         {fecha} - {hora}
@@ -76,7 +86,6 @@ const Cita = (props) => {
         <div className="d-flex">
             <button
             type="button"
-            //*******Falta codigo*****
             className="text-uppercase py-2 px-5 font-weight-bold"
             onClick={() => eliminarCita(_id)}
 >
