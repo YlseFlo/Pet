@@ -1,7 +1,9 @@
+//Son los datos reunidos para la base 
 const mongoose = require('mongoose');
+//la base que manejaremos es en mongo
 const Schema = mongoose.Schema;
 
-constpacieteSchema = new Schema({
+const pacienteSchema = new Schema({
 
     nombre:{
         type: String,
@@ -15,6 +17,10 @@ constpacieteSchema = new Schema({
         type: String,
         trim:true,
     },
+    correo :{
+        type: String,
+        trim: true,
+    },
     fecha:{
         type:String,
         trim:true,
@@ -27,10 +33,7 @@ constpacieteSchema = new Schema({
         type: String,
         trim: true,
     }, 
-    correo :{
-        type: String,
-        trim: true,
-    },
+    
 });
 
 
